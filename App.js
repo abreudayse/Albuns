@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View, ListView} from 'react-native';
+import Album from './Album';
 
 const Header = props => {
   return (
@@ -8,14 +9,57 @@ const Header = props => {
     </View>
   )
 }
+
 export default class App extends Component {
+
+  state = {
+    dataSource: new ListView.DataSource({
+      rowHasChanged: (row1, row2) => row1 !== row2
+    }),
+  }
+
+  componentWillMount() {
+
+    const albunsArray = [
+      {
+        name: 'Britney Spears',
+        year: '2002',
+        style: 'POP'
+      },
+      {
+        name: 'Michael Jackson',
+        year: '1999',
+        style: 'POP'
+      },
+      {
+        name: 'Link Park',
+        year: '2004',
+        style: 'Rock'
+      },
+      {
+        name: 'Roberto Carlos',
+        year: '2008',
+        style: 'MPB'
+      },
+    ]
+
+    this.setState({ dataSource: this.state.dataSource.cloneWithRows(albunsArray) });
+  }
+
+  renderAlbum = album => {
+    return <Album album={album} />;
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Header title='Albuns list'/>
-        <View style={styles.containerContent}>
-          <Text style={styles.text}>My list of albums page!</Text>
-        </View>
+        <ListView
+          style={{ marginTop: 20 }}
+          dataSource={this.state.dataSource}
+          renderRow={this.renderAlbum}
+          removeClippedSubviews={false}
+        />
       </View>
     );
   }
