@@ -12,8 +12,10 @@ export default class Album extends Component {
         console.log(this.props.album);
         return (
             <View style={styles.containerAlbum}>
-                <Text>{this.props.album.name}</Text>
-                <Text>{details}</Text>
+                <View style={{marginHorizontal: 10, marginBottom: 10, borderBottomColor: '#737373', borderBottomWidth: 0.5, paddingBottom: 4, paddingTop: 8}}>
+                    <Text style={{fontSize: 16, color: '#262626'}}>{this.props.album.name}</Text>
+                    <Text style={{fontSize: 14, color: '#737373'}}>{details}</Text>
+                </View>
             </View>
         )
     }
@@ -22,6 +24,7 @@ export default class Album extends Component {
 const styles = StyleSheet.create({
     containerAlbum: {
         backgroundColor: '#f2f2f2',
+
     }
 });
   

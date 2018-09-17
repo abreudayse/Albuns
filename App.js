@@ -55,7 +55,6 @@ export default class App extends Component {
       <View style={styles.container}>
         <Header title='Albuns list'/>
         <ListView
-          style={{ marginTop: 20 }}
           dataSource={this.state.dataSource}
           renderRow={this.renderAlbum}
           removeClippedSubviews={false}
@@ -68,7 +67,7 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#ffe6ff',
   },
   header: {
     justifyContent: 'center',
