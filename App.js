@@ -1,11 +1,21 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
+const Header = props => {
+  return (
+    <View style={styles.header}>
+      <Text style={styles.textHeader}>{props.title}</Text>
+    </View>
+  )
+}
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>My list of albums page!</Text>
+        <Header title='Albuns list'/>
+        <View style={styles.containerContent}>
+          <Text style={styles.text}>My list of albums page!</Text>
+        </View>
       </View>
     );
   }
@@ -14,18 +24,26 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  header: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 40,
+    backgroundColor: 'pink'
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  containerContent: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
+  text: {
+    fontSize: 18,
+    fontStyle: 'italic'
+  },
+  textHeader: {
+    fontSize: 16,
+    color: 'black'
+  }
+
 });
