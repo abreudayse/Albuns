@@ -14,8 +14,10 @@ export default class Album extends Component {
             <View style={styles.container}>
                 <View style={styles.containerAlbum}>
                     <Image style={styles.avatar} source={{uri: this.props.album.avatar}}/>
-                    <Text style={styles.textName}>{this.props.album.name}</Text>
-                    <Text style={styles.textDetails}>{details}</Text>
+                    <View style={styles.details}>
+                        <Text style={styles.textName}>{this.props.album.name}</Text>
+                        <Text style={styles.textDetails}>{details}</Text>
+                    </View>
                 </View>
             </View>
         )
@@ -27,6 +29,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#f2f2f2',
     },
     containerAlbum: {
+        flexDirection: 'row',
         marginHorizontal: 10, 
         marginBottom: 10, 
         borderBottomColor: '#737373', 
@@ -36,7 +39,7 @@ const styles = StyleSheet.create({
     },
     avatar: {
         width: 64, 
-        height: 64
+        height: 64,
     },
     textName: {
         fontSize: 16, 
@@ -45,6 +48,9 @@ const styles = StyleSheet.create({
     textDetails: {
         fontSize: 14, 
         color: '#737373'
+    },
+    details: {
+        marginLeft: 8
     }
 });
   
