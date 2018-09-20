@@ -26,7 +26,7 @@ export default class Album extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#f2f2f2',
+        backgroundColor: '#fff4ff',
     },
     containerAlbum: {
         flexDirection: 'row',
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     avatar: {
         width: 64, 
         height: 64,
+        borderRadius: 8
     },
     textName: {
         fontSize: 16, 
