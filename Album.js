@@ -9,14 +9,14 @@ import {
 
 export default class Album extends Component {
     render() {
-        const details = this.props.album.style + ' / ' + this.props.album.year;
         return (
             <View style={styles.container}>
                 <View style={styles.containerAlbum}>
                     <Image style={styles.avatar} source={{uri: this.props.album.avatar}}/>
                     <View style={styles.details}>
                         <Text style={styles.textName}>{this.props.album.name}</Text>
-                        <Text style={styles.textDetails}>{details}</Text>
+                        <Text style={styles.textStyle}>{this.props.album.style}</Text>
+                        <Text style={styles.textYear}>{this.props.album.year}</Text>
                     </View>
                 </View>
             </View>
@@ -46,9 +46,14 @@ const styles = StyleSheet.create({
         fontSize: 16, 
         color: '#262626'
     },
-    textDetails: {
+    textStyle: {
         fontSize: 14, 
         color: '#737373'
+    },
+    textYear: {
+        fontSize: 14, 
+        color: '#b3b3b3',
+        fontStyle: 'italic'
     },
     details: {
         marginLeft: 8
