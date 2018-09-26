@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Albums from './Albums';
+import AlbumDetails from './AlbumDetails';
 import { StackNavigator } from 'react-navigation';
 
 export default class App extends Component {
@@ -16,6 +17,12 @@ export const AlbumsStack = StackNavigator({
       title: 'Albums List',
       headerMode: 'screen',
     },
+  },
+  AlbumDetails: {
+    screen: AlbumDetails,
+    navigationOptions: {
+      title: 'Album Details'
+    }
   }
 });
 

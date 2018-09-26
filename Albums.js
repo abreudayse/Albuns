@@ -43,7 +43,7 @@ class Albums extends Component {
       }
     
       renderAlbum = album => {
-        return <AlbumItem album={album} />;
+        return <AlbumItem album={album} onPress={() => this.props.navigation.navigate('AlbumDetails', album)}/>;
       }
     
       render() {

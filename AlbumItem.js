@@ -4,7 +4,8 @@ import {
     View,
     Text,
     StyleSheet,
-    Image
+    Image,
+    TouchableOpacity
 } from 'react-native';
 
 export default class AlbumItem extends Component {
@@ -17,6 +18,11 @@ export default class AlbumItem extends Component {
                         <Text style={styles.textName}>{this.props.album.name}</Text>
                         <Text style={styles.textStyle}>{this.props.album.style}</Text>
                         <Text style={styles.textYear}>{this.props.album.year}</Text>
+                    </View>
+                    <View style={styles.containerButton}>
+                        <TouchableOpacity onPress={this.props.onPress} style={styles.button}>
+                            <Text>Details</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>
@@ -56,7 +62,18 @@ const styles = StyleSheet.create({
         fontStyle: 'italic'
     },
     details: {
+        flex: 1,
         marginLeft: 8
+    },
+    containerButton: {
+        justifyContent: 'center'
+    },
+    button: {
+        backgroundColor: 'yellow', 
+        justifyContent: 'center', 
+        height: 28, 
+        paddingHorizontal: 4, 
+        borderRadius: 6
     }
 });
   
