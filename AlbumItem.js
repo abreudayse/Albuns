@@ -7,7 +7,7 @@ import {
     Image
 } from 'react-native';
 
-export default class Album extends Component {
+export default class AlbumItem extends Component {
     render() {
         return (
             <View style={styles.container}>
