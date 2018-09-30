@@ -7,13 +7,14 @@ class AlbumDetails extends Component {
         console.log(avatar);
         return (
             <View style={styles.container}>
-                <View style={{flex: 1}}>
-                    <Text>{name}</Text>
-                    <Text>{year}</Text>
-                    <Text>{style}</Text>
-                    <View style={{flex: 1}}>
-                        <Image style={{width: 100, height: 100}} source={{uri: avatar}}/>
+                <View style={{flex: 1, marginLeft: 8, marginTop: 10}}>
+                    <View style={{}}>
+                        <Image style={{width: 250, height: 250}} source={{uri: avatar}}/>
                     </View>
+                    <Text style={{fontSize: 20, color: 'black'}}>{name}</Text>
+                    <Text style={{fontSize: 18, fontStyle: 'italic'}}>{year}</Text>
+                    <Text style={{fontSize: 18, fontStyle: 'italic'}}>{style}</Text>
+
                 </View>
 
             </View>
